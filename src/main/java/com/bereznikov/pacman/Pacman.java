@@ -2,6 +2,7 @@ package com.bereznikov.pacman;
 
 import com.bereznikov.pacman.search.ASearchImpl;
 import com.bereznikov.pacman.search.DepthSearchImpl;
+import com.bereznikov.pacman.search.GreedySearchImpl;
 import com.bereznikov.pacman.search.Search;
 import com.bereznikov.pacman.util.UtilMethods;
 
@@ -38,7 +39,8 @@ public class Pacman extends JFrame {
 
 
         //Search search = new DepthSearchImpl(theBoard);//Time: 192700 ns Steps: 22
-        Search search = new ASearchImpl(theBoard);//Time: 377800 ns Steps: 22
+        //Search search = new ASearchImpl(theBoard);//Time: 377800 ns Steps: 22
+        Search search = new GreedySearchImpl(theBoard);//Time: 377800 ns Steps: 22
 
         RobotMovement robot = new RobotMovementImpl(new Robot(), theBoard, search);
         robot.start();
